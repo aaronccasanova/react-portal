@@ -6,20 +6,40 @@ const Wrapper = styled.div`
   min-height: 100vh;
 
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+`;
+
+const Card = styled.div`
+  padding: 20px;
+  background: snow;
+  border-radius: 4px;
+
+  width: calc(260px + (1000 - 260) * (100vmin - 320px) / (2500 - 320));
+  min-height: calc(260px + (1000 - 260) * (100vmin - 320px) / (2500 - 320));
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+
+  ul {
+    list-style: none;
+
+    li {
+      font-size: calc(12px + (40 - 12) * (100vmin - 320px) / (2500 - 320));
+    }
+  }
 `;
 
 const Title = styled.h1`
-  color: white;
-  font-size: 50px;
+  font-size: calc(16px + (70 - 16) * (100vmin - 320px) / (2500 - 320));
+  margin-bottom: 20px;
 `;
 
 const X = styled.div`
-  color: white;
-  font-size: 50px;
+  font-size: calc(16px + (70 - 16) * (100vmin - 320px) / (2500 - 320));
+  margin-top: auto;
 `;
 
 class WalkthroughSlides extends Component {
@@ -27,8 +47,25 @@ class WalkthroughSlides extends Component {
     const { togglePortal } = this.props;
     return (
       <Wrapper>
-        <Title>Walkthrough Guide!</Title>
-        <X onClick={togglePortal}>X</X>
+        <Card>
+          <Title>Walkthrough Guide!</Title>
+          <ul>
+            <li>
+              <strong>Step 1:</strong> Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Aut, doloribus.
+            </li>
+            <li>
+              <strong>Step 2:</strong> Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Distinctio quia consectetur sit error libero
+              eligendi.
+            </li>
+            <li>
+              <strong>Step 3:</strong> Lorem ipsum dolor sit amet consectetur
+              adipisicing elit. Aut, doloribus.
+            </li>
+          </ul>
+          <X onClick={togglePortal}>X</X>
+        </Card>
       </Wrapper>
     );
   }

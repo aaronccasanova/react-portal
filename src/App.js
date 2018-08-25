@@ -9,7 +9,7 @@ import PortalRenderProp from './components/portals/PortalRenderProp';
 import WalkthroughSlides from './components/portals/WalkthroughSlides';
 
 const Button = styled.button`
-  font-size: 30px;
+  font-size: 3rem;
 `;
 
 class App extends Component {
@@ -30,9 +30,11 @@ class App extends Component {
                   <WalkthroughSlides togglePortal={togglePortal} />
                 )}
                 {portalClosed && (
-                  <Button type="button" onClick={togglePortal}>
-                    Show Portal
-                  </Button>
+                  <div>
+                    <Button type="button" onClick={togglePortal}>
+                      Show Portal
+                    </Button>
+                  </div>
                 )}
               </div>
             )}
