@@ -17,7 +17,18 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          {/* _________________ left off here _____________ */}
+          {/* made separate portal to test turning on in steps */}
+          <PortalRenderProp>
+            {({ portalOpen, portalClosed, togglePortal, setPortal }) => (
+              <div>
+                <img src={logo} className="App-logo" alt="logo" />
+                <span onClick={togglePortal} style={{ color: 'slategray' }}>
+                  X
+                </span>
+              </div>
+            )}
+          </PortalRenderProp>
           <h1 className="App-title">React Portal</h1>
         </header>
         <br />

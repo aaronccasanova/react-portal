@@ -12,10 +12,11 @@ const Wrapper = styled.div`
   /* bring all children elements to the front */
   & > * {
     position: relative;
-    z-index: 100;
+    z-index: 1000;
   }
 
   /* fixed overlay */
+  /* 1 index less than children */
   &::before {
     content: '';
     position: fixed;
@@ -24,7 +25,7 @@ const Wrapper = styled.div`
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    z-index: 99;
+    z-index: 999;
   }
 `;
 
